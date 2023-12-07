@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,9 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace caloTracker
-{    public partial class LoginForm : Form
+{ public partial class LoginForm : Form
     {
         public LoginForm()
         {
@@ -36,11 +38,14 @@ namespace caloTracker
             Application.Exit();
         }
 
+
+        public static String firstname;
+        public static String username;
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-
-            String username = textBoxUsername.Text;
+            db.OpenConnection();
+            username = textBoxUsername.Text;
             String password = textBoxPassword.Text;
 
             DataTable table = new DataTable();
@@ -52,13 +57,14 @@ namespace caloTracker
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
+
             //Check if the user exists
-            if(table.Rows.Count > 0)
+            if (table.Rows.Count > 0)
             {
                 this.Hide();
                 MainForm mainform = new MainForm();
                 mainform.Show();
-
+                firstname = getFirstName(username);
             }
             else
             {
@@ -77,10 +83,42 @@ namespace caloTracker
                     MessageBox.Show("WRONG USERNAME OR PASSWORD", "WRONG DATA", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
             }
+            db.CloseConnection();
 
         }
 
-        private void labelGoToSignUp_Click(object sender, EventArgs e)
+        // method to get the first name based on the username
+        public static string getFirstName(string username)
+        {
+            string firstName = null;
+
+            try
+            {
+                DB db = new DB();
+                db.OpenConnection();
+
+                string query = "SELECT firstname FROM users WHERE username = @usn";
+                using (MySqlCommand command = new MySqlCommand(query, db.getConnection()))
+                {
+                    command.Parameters.AddWithValue("@usn", username);
+
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            firstName = reader["firstname"].ToString();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return firstName;
+        }
+
+    private void labelGoToSignUp_Click(object sender, EventArgs e)
         {
             this.Hide();
             RegisterForm registerform = new RegisterForm();
