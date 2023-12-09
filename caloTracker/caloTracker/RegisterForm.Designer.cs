@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxHeight = new System.Windows.Forms.TextBox();
+            this.textBoxAge = new System.Windows.Forms.TextBox();
             this.buttonFem = new System.Windows.Forms.Button();
             this.buttonMasc = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelClose = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxAge = new System.Windows.Forms.TextBox();
-            this.textBoxHeight = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,32 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(822, 814);
             this.panel1.TabIndex = 1;
+            // 
+            // textBoxHeight
+            // 
+            this.textBoxHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHeight.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textBoxHeight.Location = new System.Drawing.Point(403, 180);
+            this.textBoxHeight.Name = "textBoxHeight";
+            this.textBoxHeight.Size = new System.Drawing.Size(266, 38);
+            this.textBoxHeight.TabIndex = 212;
+            this.textBoxHeight.Text = "height (cm)";
+            this.textBoxHeight.Enter += new System.EventHandler(this.textBoxHeight_Enter);
+            this.textBoxHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHeight_KeyPress);
+            this.textBoxHeight.Leave += new System.EventHandler(this.textBoxHeight_Leave);
+            // 
+            // textBoxAge
+            // 
+            this.textBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAge.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textBoxAge.Location = new System.Drawing.Point(122, 180);
+            this.textBoxAge.Name = "textBoxAge";
+            this.textBoxAge.Size = new System.Drawing.Size(266, 38);
+            this.textBoxAge.TabIndex = 211;
+            this.textBoxAge.Text = "age";
+            this.textBoxAge.Enter += new System.EventHandler(this.textBoxAge_Enter);
+            this.textBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAge_KeyPress);
+            this.textBoxAge.Leave += new System.EventHandler(this.textBoxAge_Leave);
             // 
             // buttonFem
             // 
@@ -316,7 +342,7 @@
             this.labelClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClose.ForeColor = System.Drawing.SystemColors.Window;
             this.labelClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelClose.Location = new System.Drawing.Point(789, 0);
+            this.labelClose.Location = new System.Drawing.Point(792, 0);
             this.labelClose.Name = "labelClose";
             this.labelClose.Size = new System.Drawing.Size(30, 29);
             this.labelClose.TabIndex = 1;
@@ -335,32 +361,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CREATE YOUR ACCOUNT";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBoxAge
-            // 
-            this.textBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAge.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxAge.Location = new System.Drawing.Point(122, 180);
-            this.textBoxAge.Name = "textBoxAge";
-            this.textBoxAge.Size = new System.Drawing.Size(266, 38);
-            this.textBoxAge.TabIndex = 211;
-            this.textBoxAge.Text = "age";
-            this.textBoxAge.Enter += new System.EventHandler(this.textBoxAge_Enter);
-            this.textBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAge_KeyPress);
-            this.textBoxAge.Leave += new System.EventHandler(this.textBoxAge_Leave);
-            // 
-            // textBoxHeight
-            // 
-            this.textBoxHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHeight.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxHeight.Location = new System.Drawing.Point(403, 180);
-            this.textBoxHeight.Name = "textBoxHeight";
-            this.textBoxHeight.Size = new System.Drawing.Size(266, 38);
-            this.textBoxHeight.TabIndex = 212;
-            this.textBoxHeight.Text = "height (cm)";
-            this.textBoxHeight.Enter += new System.EventHandler(this.textBoxHeight_Enter);
-            this.textBoxHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxHeight_KeyPress);
-            this.textBoxHeight.Leave += new System.EventHandler(this.textBoxHeight_Leave);
             // 
             // RegisterForm
             // 

@@ -37,7 +37,7 @@ namespace caloTracker
                 label5.Text = myReader["height"].ToString();
                 label6.Text = myReader["actualWeight"].ToString() + "kg";
                 label7.Text = myReader["goalWeight"].ToString() + "kg";
-                label8.Text = myReader["calorieIntake"].ToString() + "kcal";
+                label8.Text = myReader["calorieIntake"].ToString() + "kcal per day";
 
             }
             else
@@ -49,6 +49,31 @@ namespace caloTracker
                 label8.Text = "";
             }
             db.CloseConnection();
+        }
+
+        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FoodForm food = new FoodForm();
+            food.Show();
+            
+        }
+
+        private void labelClose_Click(object sender, EventArgs e)
+        {
+            //this.Close();
+            Application.Exit();
+        }
+
+        private void labelClose_MouseEnter(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.Black;
+
+        }
+
+        private void labelClose_MouseLeave(object sender, EventArgs e)
+        {
+            labelClose.ForeColor = Color.White;
         }
     }
 }

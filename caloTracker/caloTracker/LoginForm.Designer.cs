@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.labelGoToSignUp = new System.Windows.Forms.Label();
+            this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelClose = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.labelGoToSignUp = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxPassword);
             this.panel1.Controls.Add(this.labelGoToSignUp);
             this.panel1.Controls.Add(this.buttonLogin);
-            this.panel1.Controls.Add(this.textBoxPassword);
             this.panel1.Controls.Add(this.textBoxUsername);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -52,6 +52,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(570, 473);
             this.panel1.TabIndex = 0;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textBoxPassword.Location = new System.Drawing.Point(77, 259);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(477, 53);
+            this.textBoxPassword.TabIndex = 8;
+            this.textBoxPassword.Text = "password";
+            this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
+            this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
+            // 
+            // labelGoToSignUp
+            // 
+            this.labelGoToSignUp.AutoSize = true;
+            this.labelGoToSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelGoToSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGoToSignUp.ForeColor = System.Drawing.SystemColors.Window;
+            this.labelGoToSignUp.Location = new System.Drawing.Point(176, 415);
+            this.labelGoToSignUp.Name = "labelGoToSignUp";
+            this.labelGoToSignUp.Size = new System.Drawing.Size(201, 16);
+            this.labelGoToSignUp.TabIndex = 7;
+            this.labelGoToSignUp.Text = "Don\'t Have an Account? Sign Up";
+            this.labelGoToSignUp.Click += new System.EventHandler(this.labelGoToSignUp_Click);
+            this.labelGoToSignUp.MouseEnter += new System.EventHandler(this.labelGoToSignUp_MouseEnter);
+            this.labelGoToSignUp.MouseLeave += new System.EventHandler(this.labelGoToSignUp_MouseLeave);
             // 
             // buttonLogin
             // 
@@ -68,22 +95,17 @@
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(77, 248);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(477, 53);
-            this.textBoxPassword.TabIndex = 4;
-            this.textBoxPassword.UseSystemPasswordChar = true;
-            // 
             // textBoxUsername
             // 
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsername.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBoxUsername.Location = new System.Drawing.Point(77, 171);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(477, 53);
             this.textBoxUsername.TabIndex = 2;
+            this.textBoxUsername.Text = "username";
+            this.textBoxUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);
+            this.textBoxUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
             // 
             // panel2
             // 
@@ -122,21 +144,6 @@
             this.label1.Text = "USER LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // labelGoToSignUp
-            // 
-            this.labelGoToSignUp.AutoSize = true;
-            this.labelGoToSignUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelGoToSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGoToSignUp.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelGoToSignUp.Location = new System.Drawing.Point(176, 415);
-            this.labelGoToSignUp.Name = "labelGoToSignUp";
-            this.labelGoToSignUp.Size = new System.Drawing.Size(201, 16);
-            this.labelGoToSignUp.TabIndex = 7;
-            this.labelGoToSignUp.Text = "Don\'t Have an Account? Sign Up";
-            this.labelGoToSignUp.Click += new System.EventHandler(this.labelGoToSignUp_Click);
-            this.labelGoToSignUp.MouseEnter += new System.EventHandler(this.labelGoToSignUp_MouseEnter);
-            this.labelGoToSignUp.MouseLeave += new System.EventHandler(this.labelGoToSignUp_MouseLeave);
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -162,9 +169,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelClose;
-        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Label labelGoToSignUp;
+        private System.Windows.Forms.TextBox textBoxPassword;
     }
 }

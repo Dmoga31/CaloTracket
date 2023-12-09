@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics.Tracing;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -205,8 +206,8 @@ namespace caloTracker
             command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = textBoxLastname.Text;
             command.Parameters.Add("@email", MySqlDbType.VarChar).Value = textBoxEmail.Text;
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = textBoxUsername.Text;
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = textBoxPassword.Text;
-            command.Parameters.Add("@actW", MySqlDbType.VarChar).Value = textBoxActualW.Text;
+            string hashedPassword = HashPassword(textBoxPassword.Text);
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = hashedPassword; command.Parameters.Add("@actW", MySqlDbType.VarChar).Value = textBoxActualW.Text;
             command.Parameters.Add("@goalW", MySqlDbType.VarChar).Value = textBoxGoalW.Text;
             command.Parameters.Add("@age", MySqlDbType.VarChar).Value = textBoxAge.Text;
             command.Parameters.Add("@height", MySqlDbType.VarChar).Value = textBoxHeight.Text;
@@ -319,6 +320,24 @@ namespace caloTracker
             else
             {
                 MessageBox.Show("ENTER YOUR INFORMATION!!", "EMPTY DATA", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+        }
+
+        // Función para encriptar la contraseña utilizando SHA-256
+        static string HashPassword(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+                // Convertir los bytes en una cadena hexadecimal
+                StringBuilder builder = new StringBuilder();
+                for (int i = 0; i < hashedBytes.Length; i++)
+                {
+                    builder.Append(hashedBytes[i].ToString("x2"));
+                }
+
+                return builder.ToString();
             }
         }
 
