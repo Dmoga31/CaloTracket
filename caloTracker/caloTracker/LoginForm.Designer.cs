@@ -57,9 +57,9 @@
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxPassword.Location = new System.Drawing.Point(77, 259);
+            this.textBoxPassword.Location = new System.Drawing.Point(12, 259);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(477, 53);
+            this.textBoxPassword.Size = new System.Drawing.Size(542, 53);
             this.textBoxPassword.TabIndex = 8;
             this.textBoxPassword.Text = "password";
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
@@ -99,9 +99,9 @@
             // 
             this.textBoxUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxUsername.Location = new System.Drawing.Point(77, 171);
+            this.textBoxUsername.Location = new System.Drawing.Point(12, 171);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(477, 53);
+            this.textBoxUsername.Size = new System.Drawing.Size(542, 53);
             this.textBoxUsername.TabIndex = 2;
             this.textBoxUsername.Text = "username";
             this.textBoxUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);

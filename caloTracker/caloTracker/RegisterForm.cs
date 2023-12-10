@@ -189,7 +189,7 @@ namespace caloTracker
         public static string firstname;
         public static int age;
 
-        private void buttonCreateAccount_Click(object sender, EventArgs e)
+        private async void buttonCreateAccount_Click(object sender, EventArgs e)
         {
             firstname = textBoxFirstname.Text;
             age = Convert.ToInt32(textBoxAge.Text);
@@ -206,7 +206,7 @@ namespace caloTracker
             command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = textBoxLastname.Text;
             command.Parameters.Add("@email", MySqlDbType.VarChar).Value = textBoxEmail.Text;
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = textBoxUsername.Text;
-            string hashedPassword = HashPassword(textBoxPassword.Text);
+            string hashedPassword = await HashPasswordAsync(textBoxPassword.Text);
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = hashedPassword; command.Parameters.Add("@actW", MySqlDbType.VarChar).Value = textBoxActualW.Text;
             command.Parameters.Add("@goalW", MySqlDbType.VarChar).Value = textBoxGoalW.Text;
             command.Parameters.Add("@age", MySqlDbType.VarChar).Value = textBoxAge.Text;
@@ -238,19 +238,19 @@ namespace caloTracker
                 //Si quiere aumentar peso
                 if (goalWeight > actWeight)
                 {
-                    totalCalories = BMR(actWeight, height, activity, age, "masculine") + 500;
+                    totalCalories = await BMRAsync(actWeight, height, activity, age, "masculine") + 500;
                     command.Parameters.Add("@calIn", MySqlDbType.VarChar).Value = totalCalories.ToString();
                 }
                 //Si quiere bajar de pes
                 else if (goalWeight < actWeight)
                 {
-                    totalCalories = BMR(actWeight, height, activity, age, "masculine") - 500;
+                    totalCalories = await BMRAsync(actWeight, height, activity, age, "masculine") - 500;
                     command.Parameters.Add("@calIn", MySqlDbType.VarChar).Value = totalCalories.ToString();
                 }
                 //Si quiere mantener peso
                 else if (goalWeight == actWeight)
                 {
-                    totalCalories = BMR(actWeight, height, activity, age, "masculine");
+                    totalCalories = await BMRAsync(actWeight, height, activity, age, "masculine");
                     command.Parameters.Add("@calIn", MySqlDbType.VarChar).Value = totalCalories.ToString();
                 }
             }
@@ -261,25 +261,25 @@ namespace caloTracker
                 //Si quiere aumentar peso
                 if (goalWeight > actWeight)
                 {
-                    totalCalories = BMR(actWeight, height, activity, age, "femenine") + 500;
+                    totalCalories = await BMRAsync(actWeight, height, activity, age, "femenine") + 500;
                     command.Parameters.Add("@calIn", MySqlDbType.VarChar).Value = totalCalories.ToString();
                 }
                 //Si quiere bajar de pes
                 else if (goalWeight < actWeight)
                 {
-                    totalCalories = BMR(actWeight, height, activity, age, "femenine") - 500;
+                    totalCalories = await BMRAsync(actWeight, height, activity, age, "femenine") - 500;
                     command.Parameters.Add("@calIn", MySqlDbType.VarChar).Value = totalCalories.ToString();
                 }
                 //Si quiere mantener peso
                 else if (goalWeight == actWeight)
                 {
-                    totalCalories = BMR(actWeight, height, activity, age, "femenine");
+                    totalCalories = await BMRAsync(actWeight, height, activity, age, "femenine");
                     command.Parameters.Add("@calIn", MySqlDbType.VarChar).Value = totalCalories.ToString();
                 }
             }
 
             // open the connection 
-            db.OpenConnection();
+             db.OpenConnection();
 
 
             // Checks if textboxes contains default value
@@ -324,11 +324,11 @@ namespace caloTracker
         }
 
         // Función para encriptar la contraseña utilizando SHA-256
-        static string HashPassword(string password)
+        static async Task<string> HashPasswordAsync(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
             {
-                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                byte[] hashedBytes = await Task.Run(() => sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
 
                 // Convertir los bytes en una cadena hexadecimal
                 StringBuilder builder = new StringBuilder();
@@ -342,22 +342,25 @@ namespace caloTracker
         }
 
         // Harris-Benedict formula for men/women - Basal Metabolic Rate
-        static double BMR(double actW, double height, double activity ,int age,String gender)
+        static async Task<double> BMRAsync(double actW, double height, double activity, int age, string gender)
         {
-            if (gender.Equals("masculine"))
+            return await Task.Run(() =>
             {
-                double bmrMen = (66 + (13.7 * actW)) + ((5 * height) - (6.8 * age)) * activity;
-
-                return bmrMen;
-            } else if (gender.Equals("femenine"))
-            {
-                double bmrWomen = (655 + (9.6 * actW)) + ((1.8 * height) - (4.7 * age)) * activity;
-                return bmrWomen;
-            } else
-            {
-                return -1;
-            }
-            
+                if (gender.Equals("masculine"))
+                {
+                    double bmrMen = (66 + (13.7 * actW)) + ((5 * height) - (6.8 * age)) * activity;
+                    return bmrMen;
+                }
+                else if (gender.Equals("femenine"))
+                {
+                    double bmrWomen = (655 + (9.6 * actW)) + ((1.8 * height) - (4.7 * age)) * activity;
+                    return bmrWomen;
+                }
+                else
+                {
+                    return -1;
+                }
+            });
         }
 
 
@@ -564,13 +567,13 @@ namespace caloTracker
             {
                 textBoxAge.Text = "age";
                 textBoxAge.ForeColor = Color.Gray;
-            }
-
-            if (Convert.ToInt32(textBoxAge.Text) < 10)
-            {
-                MessageBox.Show("You need to be older than 10 years to create an account");
-                textBoxAge.Text = "age";
-                textBoxAge.ForeColor = Color.Gray;
+            } else if (!age.ToLower().Trim().Equals("age") || !age.Trim().Equals("")) {
+                if (Convert.ToInt32(textBoxAge.Text) < 10)
+                {
+                    MessageBox.Show("You need to be older than 10 years to create an account");
+                    textBoxAge.Text = "age";
+                    textBoxAge.ForeColor = Color.Gray;
+                }
             }
         }
 
