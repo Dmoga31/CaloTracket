@@ -207,7 +207,8 @@ namespace caloTracker
             command.Parameters.Add("@email", MySqlDbType.VarChar).Value = textBoxEmail.Text;
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = textBoxUsername.Text;
             string hashedPassword = await HashPasswordAsync(textBoxPassword.Text);
-            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = hashedPassword; command.Parameters.Add("@actW", MySqlDbType.VarChar).Value = textBoxActualW.Text;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = hashedPassword; 
+            command.Parameters.Add("@actW", MySqlDbType.VarChar).Value = textBoxActualW.Text;
             command.Parameters.Add("@goalW", MySqlDbType.VarChar).Value = textBoxGoalW.Text;
             command.Parameters.Add("@age", MySqlDbType.VarChar).Value = textBoxAge.Text;
             command.Parameters.Add("@height", MySqlDbType.VarChar).Value = textBoxHeight.Text;

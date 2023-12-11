@@ -16,7 +16,7 @@ namespace caloTracker
         public MainForm()
         {
             InitializeComponent();
-            label3.Text = LoginForm.username;
+            labelUsername.Text = LoginForm.username;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -33,20 +33,20 @@ namespace caloTracker
             MySqlDataReader myReader = command.ExecuteReader();
             if(myReader.Read())
             {
-                label4.Text = myReader["age"].ToString();
-                label5.Text = myReader["height"].ToString();
-                label6.Text = myReader["actualWeight"].ToString() + "kg";
-                label7.Text = myReader["goalWeight"].ToString() + "kg";
-                label8.Text = myReader["calorieIntake"].ToString() + "kcal per day";
+                labelAge.Text = myReader["age"].ToString();
+                labelHeight.Text = myReader["height"].ToString();
+                labelActW.Text = myReader["actualWeight"].ToString() + "kg";
+                labelGoalW.Text = myReader["goalWeight"].ToString() + "kg";
+                labelKcal.Text = myReader["calorieIntake"].ToString() + "kcal per day";
 
             }
             else
             {
-                label4.Text = "";
-                label5.Text = "";
-                label6.Text = "";
-                label7.Text = "";
-                label8.Text = "";
+                labelAge.Text = "";
+                labelHeight.Text = "";
+                labelActW.Text = "";
+                labelGoalW.Text = "";
+                labelKcal.Text = "";
             }
             db.CloseConnection();
         }

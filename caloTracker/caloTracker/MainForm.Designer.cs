@@ -36,12 +36,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelKcal = new System.Windows.Forms.Label();
+            this.labelGoalW = new System.Windows.Forms.Label();
+            this.labelActW = new System.Windows.Forms.Label();
+            this.labelHeight = new System.Windows.Forms.Label();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCreateAccount = new System.Windows.Forms.Button();
             this.labelClose = new System.Windows.Forms.Label();
@@ -79,12 +79,12 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.labelKcal);
+            this.panel1.Controls.Add(this.labelGoalW);
+            this.panel1.Controls.Add(this.labelActW);
+            this.panel1.Controls.Add(this.labelHeight);
+            this.panel1.Controls.Add(this.labelAge);
+            this.panel1.Controls.Add(this.labelUsername);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -148,71 +148,71 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Total Calorie Intake";
             // 
-            // label8
+            // labelKcal
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(128, 589);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(370, 69);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "calorieIntake";
+            this.labelKcal.AutoSize = true;
+            this.labelKcal.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKcal.ForeColor = System.Drawing.SystemColors.Window;
+            this.labelKcal.Location = new System.Drawing.Point(128, 589);
+            this.labelKcal.Name = "labelKcal";
+            this.labelKcal.Size = new System.Drawing.Size(370, 69);
+            this.labelKcal.TabIndex = 7;
+            this.labelKcal.Text = "calorieIntake";
             // 
-            // label7
+            // labelGoalW
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(504, 402);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(205, 42);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "goalWeight";
+            this.labelGoalW.AutoSize = true;
+            this.labelGoalW.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGoalW.ForeColor = System.Drawing.SystemColors.Window;
+            this.labelGoalW.Location = new System.Drawing.Point(504, 402);
+            this.labelGoalW.Name = "labelGoalW";
+            this.labelGoalW.Size = new System.Drawing.Size(205, 42);
+            this.labelGoalW.TabIndex = 6;
+            this.labelGoalW.Text = "goalWeight";
             // 
-            // label6
+            // labelActW
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Window;
-            this.label6.Location = new System.Drawing.Point(466, 261);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(234, 42);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "actualWeight";
+            this.labelActW.AutoSize = true;
+            this.labelActW.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelActW.ForeColor = System.Drawing.SystemColors.Window;
+            this.labelActW.Location = new System.Drawing.Point(466, 261);
+            this.labelActW.Name = "labelActW";
+            this.labelActW.Size = new System.Drawing.Size(234, 42);
+            this.labelActW.TabIndex = 5;
+            this.labelActW.Text = "actualWeight";
             // 
-            // label5
+            // labelHeight
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Window;
-            this.label5.Location = new System.Drawing.Point(142, 402);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(120, 42);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "height";
+            this.labelHeight.AutoSize = true;
+            this.labelHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeight.ForeColor = System.Drawing.SystemColors.Window;
+            this.labelHeight.Location = new System.Drawing.Point(142, 402);
+            this.labelHeight.Name = "labelHeight";
+            this.labelHeight.Size = new System.Drawing.Size(120, 42);
+            this.labelHeight.TabIndex = 4;
+            this.labelHeight.Text = "height";
             // 
-            // label4
+            // labelAge
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(158, 261);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 42);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "age";
+            this.labelAge.AutoSize = true;
+            this.labelAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAge.ForeColor = System.Drawing.SystemColors.Window;
+            this.labelAge.Location = new System.Drawing.Point(158, 261);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(81, 42);
+            this.labelAge.TabIndex = 3;
+            this.labelAge.Text = "age";
             // 
-            // label3
+            // labelUsername
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Window;
-            this.label3.Location = new System.Drawing.Point(386, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 69);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "name";
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.ForeColor = System.Drawing.SystemColors.Window;
+            this.labelUsername.Location = new System.Drawing.Point(386, 107);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(179, 69);
+            this.labelUsername.TabIndex = 2;
+            this.labelUsername.Text = "name";
             // 
             // label2
             // 
@@ -282,12 +282,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelUsername;
+        private System.Windows.Forms.Label labelGoalW;
+        private System.Windows.Forms.Label labelActW;
+        private System.Windows.Forms.Label labelHeight;
+        private System.Windows.Forms.Label labelAge;
+        private System.Windows.Forms.Label labelKcal;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
