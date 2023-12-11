@@ -13,7 +13,7 @@ namespace caloTracker
         {
             InitializeComponent();
         }
-        private void Form2_Load(object sender, EventArgs e)
+        private void FoodForm_Load(object sender, EventArgs e)
         {
             // Configuración inicial del DataGridView
             dataGridView1.AutoGenerateColumns = true;

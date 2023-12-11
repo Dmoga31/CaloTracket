@@ -155,8 +155,10 @@
   </metadata>
   <data name="label1.Text" xml:space="preserve">
     <value>Check the nutrition value of your favorites foods down below!! 
-You can either add the weight (in punds (lb)) or just write the food you want to see.
+You can either add the weight (in punds (lb) or grams (g)), quantity or just write the name of the food you want to check (default value of 
+Serving Size is 100g) if you want to check more than one, separate it using comma (,).
 Check the example on the text box for reference
+
 </value>
   </data>
 </root>

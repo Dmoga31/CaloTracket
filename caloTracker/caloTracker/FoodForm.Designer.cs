@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodForm));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.food = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +53,9 @@
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Desktop;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.food,
@@ -66,11 +70,11 @@
             this.Cholesterol,
             this.Protein,
             this.Carbs});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 200);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 213);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(681, 118);
+            this.dataGridView1.Size = new System.Drawing.Size(1326, 279);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -80,7 +84,7 @@
             this.food.HeaderText = "Food";
             this.food.MinimumWidth = 6;
             this.food.Name = "food";
-            this.food.Width = 125;
+            this.food.Width = 106;
             // 
             // Sugar
             // 
@@ -88,7 +92,7 @@
             this.Sugar.HeaderText = "Sugar";
             this.Sugar.MinimumWidth = 6;
             this.Sugar.Name = "Sugar";
-            this.Sugar.Width = 125;
+            this.Sugar.Width = 106;
             // 
             // Serving
             // 
@@ -96,7 +100,7 @@
             this.Serving.HeaderText = "Serving Size G";
             this.Serving.MinimumWidth = 6;
             this.Serving.Name = "Serving";
-            this.Serving.Width = 125;
+            this.Serving.Width = 106;
             // 
             // Fiber
             // 
@@ -104,7 +108,7 @@
             this.Fiber.HeaderText = "Fiber";
             this.Fiber.MinimumWidth = 6;
             this.Fiber.Name = "Fiber";
-            this.Fiber.Width = 125;
+            this.Fiber.Width = 106;
             // 
             // Sodium
             // 
@@ -112,7 +116,7 @@
             this.Sodium.HeaderText = "Sodium";
             this.Sodium.MinimumWidth = 6;
             this.Sodium.Name = "Sodium";
-            this.Sodium.Width = 125;
+            this.Sodium.Width = 106;
             // 
             // Potassium
             // 
@@ -120,7 +124,7 @@
             this.Potassium.HeaderText = "Potassium";
             this.Potassium.MinimumWidth = 6;
             this.Potassium.Name = "Potassium";
-            this.Potassium.Width = 125;
+            this.Potassium.Width = 107;
             // 
             // FatS
             // 
@@ -128,7 +132,7 @@
             this.FatS.HeaderText = "Fat saturated ";
             this.FatS.MinimumWidth = 6;
             this.FatS.Name = "FatS";
-            this.FatS.Width = 125;
+            this.FatS.Width = 106;
             // 
             // FatT
             // 
@@ -136,7 +140,7 @@
             this.FatT.HeaderText = "Fat total";
             this.FatT.MinimumWidth = 6;
             this.FatT.Name = "FatT";
-            this.FatT.Width = 125;
+            this.FatT.Width = 106;
             // 
             // Calories
             // 
@@ -144,7 +148,7 @@
             this.Calories.HeaderText = "Calories";
             this.Calories.MinimumWidth = 6;
             this.Calories.Name = "Calories";
-            this.Calories.Width = 125;
+            this.Calories.Width = 106;
             // 
             // Cholesterol
             // 
@@ -152,7 +156,7 @@
             this.Cholesterol.HeaderText = "Cholesterol";
             this.Cholesterol.MinimumWidth = 6;
             this.Cholesterol.Name = "Cholesterol";
-            this.Cholesterol.Width = 125;
+            this.Cholesterol.Width = 106;
             // 
             // Protein
             // 
@@ -160,7 +164,7 @@
             this.Protein.HeaderText = "Protein";
             this.Protein.MinimumWidth = 6;
             this.Protein.Name = "Protein";
-            this.Protein.Width = 125;
+            this.Protein.Width = 106;
             // 
             // Carbs
             // 
@@ -168,7 +172,7 @@
             this.Carbs.HeaderText = "Carbohydrate";
             this.Carbs.MinimumWidth = 6;
             this.Carbs.Name = "Carbs";
-            this.Carbs.Width = 125;
+            this.Carbs.Width = 106;
             // 
             // btnConsulta
             // 
@@ -176,7 +180,7 @@
             this.btnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsulta.Location = new System.Drawing.Point(117, 338);
+            this.btnConsulta.Location = new System.Drawing.Point(441, 498);
             this.btnConsulta.Name = "btnConsulta";
             this.btnConsulta.Size = new System.Drawing.Size(513, 42);
             this.btnConsulta.TabIndex = 2;
@@ -206,7 +210,7 @@
             this.labelClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClose.ForeColor = System.Drawing.SystemColors.Window;
             this.labelClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelClose.Location = new System.Drawing.Point(663, 12);
+            this.labelClose.Location = new System.Drawing.Point(1353, 0);
             this.labelClose.Name = "labelClose";
             this.labelClose.Size = new System.Drawing.Size(30, 29);
             this.labelClose.TabIndex = 1;
@@ -219,11 +223,11 @@
             // 
             this.textQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textQuery.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textQuery.Location = new System.Drawing.Point(56, 149);
+            this.textQuery.Location = new System.Drawing.Point(387, 149);
             this.textQuery.Name = "textQuery";
             this.textQuery.Size = new System.Drawing.Size(619, 45);
             this.textQuery.TabIndex = 202;
-            this.textQuery.Text = "2lb chicken";
+            this.textQuery.Text = "2lb chicken, potatoe, 10g chocolate";
             this.textQuery.Enter += new System.EventHandler(this.textBoxUsername_Enter);
             this.textQuery.Leave += new System.EventHandler(this.textBoxUsername_Leave);
             // 
@@ -232,9 +236,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 67);
+            this.label1.Location = new System.Drawing.Point(161, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(718, 75);
+            this.label1.Size = new System.Drawing.Size(1177, 125);
             this.label1.TabIndex = 203;
             this.label1.Text = resources.GetString("label1.Text");
             // 
@@ -243,7 +247,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(702, 415);
+            this.ClientSize = new System.Drawing.Size(1385, 561);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textQuery);
             this.Controls.Add(this.labelClose);
